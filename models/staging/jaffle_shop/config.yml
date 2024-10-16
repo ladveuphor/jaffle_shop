@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: table_model_test
+
+    description: Test de modèle table qui appelle un modèle éphémère
+
+    config:
+        materialized: table
+        tags: ['sql']
