@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: customer_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.cardinality_equality:
+              field: customer_id
+              to: ref('customer_orders')
+          - relationships:
+              to: ref('customer_orders')
+              field: customer_id

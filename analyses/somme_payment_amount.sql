@@ -1,0 +1,1 @@
+SELECT SUM("AMOUNT") AS total FROM {{ source('stripe', 'payment') }}
