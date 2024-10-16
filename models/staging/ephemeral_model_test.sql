@@ -15,7 +15,10 @@ BBB as(
 ),
 
 AAA as(
-  select * from BBB
+  select 
+    *,
+    ROW_NUMBER() OVER (PARTITION BY "ID" ORDER BY (SELECT 1)) as ID_SEP 
+  from BBB
 )
 
 select * from AAA
