@@ -1,3 +1,5 @@
+-- dbt run --select table_model_test --vars "{\"input_table\": \"customers\", \"column_name\": \"ID\"}" 
+-- dbt run --select table_model_test --vars "{\"input_table\": \"orders\", \"column_name\": \"ORDER_DATE\"}" 
 -- dbt run --select table_model_test --vars "{\"input_table\": \"orders\"}" 
 -- dbt run --select table_model_test
 
