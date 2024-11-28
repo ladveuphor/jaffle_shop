@@ -1,3 +1,5 @@
+-- dbt run --select SPLITS_BY_INDEX --vars "{\"input_table\": \"TD_ACA_STAGING\", \"column_name\": \"Ligne_Facture\"}" 
+
 {{
   config(
     materialized='ephemeral'
@@ -17,7 +19,7 @@ BBB as(
 AAA as(
   select 
     *,
-    ROW_NUMBER() OVER (PARTITION BY "ID" ORDER BY (SELECT 1)) as ID_SEP 
+    ROW_NUMBER() OVER (PARTITION BY "ID" ORDER BY (SELECT NULL)) as ID_SEP 
   from BBB
 )
 

@@ -1,3 +1,5 @@
+-- dbt run --select TD_ACA_FACTURES --vars "{\"input_table\": \"TD_ACA_STAGING\", \"column_name\": \"Ligne_Facture\"}" 
+
 -- dbt run --select table_model_test --vars "{\"input_table\": \"customers\", \"column_name\": \"ID\"}" 
 -- dbt run --select table_model_test --vars "{\"input_table\": \"orders\", \"column_name\": \"ORDER_DATE\"}" 
 -- dbt run --select table_model_test --vars "{\"input_table\": \"orders\"}" 
